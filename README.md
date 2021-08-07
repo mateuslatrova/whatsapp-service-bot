@@ -1,14 +1,17 @@
-# Whatsapp Customer Service Bot
+# Whatsapp Bot
 
-### In the end, this is gonna be a Whatsapp Bot that does Customer Service to a Pâtisserie.
-### The main goals here are:
-###   1. Collect the complete order from the client(products + prices)
-###   2. Answer the client until manual answering arrives.
-###   3. Annotate all the information of each order in an organized way.
+This bot works like this:
+First it looks for new messages searching for the green circle in the screen(circle is in the images folder right above).
+If the green circle is present, it clicks on the corresponding chat, gets the last received message and answers accordingly to the configuration.
+Otherwise, the bot keeps searching until finding it, when the cycle starts again.
 
-# Technologies:
-###
-###
-###
-###
+## :rocket: Technologies
 
+This project was developed with:
+
+- [Python](https://docs.python.org/3/)
+- [PyAutoGUI](https://pyautogui.readthedocs.io/en/latest/)
+- [Pyperclip](https://pyperclip.readthedocs.io/en/latest/)
+
+Obs.: this project was strongly based on the explanation made by Federico Cotogno from the "Code Palace" YouTube channel.
+      Link to the explanation video: https://www.youtube.com/watch?v=T2QFP_Y6AUU
