@@ -3,7 +3,9 @@
 This bot works like this:
 
 First it looks for new messages searching for the green circle in the screen(circle is in the images folder right above).
+
 If the green circle is present, it clicks on the corresponding chat, gets the last received message and answers accordingly to the configuration.
+
 Otherwise, the bot keeps searching until finding it, when the cycle starts again.
 
 ## :rocket: Technologies
