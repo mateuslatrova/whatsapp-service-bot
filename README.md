@@ -1,4 +1,4 @@
-# whatsapp-service-bot
+# Whatsapp Customer Service Bot
 
 ### In the end, this is gonna be a Whatsapp Bot that does Customer Service to a Pâtisserie.
 ### The main goals here are:
