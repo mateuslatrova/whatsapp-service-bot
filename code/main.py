@@ -1,12 +1,11 @@
 import pyautogui as pt
 from time import sleep
 import pyperclip
-import random
 
 sleep(3)
 
 # locate smiley face on screen:
-startPosition = pt.locateOnScreen("images/smile_paperclip.png", confidence=.60) 
+startPosition = pt.locateOnScreen("../images/smile_paperclip.png", confidence=.60) 
 # obs.: using confidence because, if we don't, a slight variation in the image will cause failure
 # in our localization.
 
@@ -17,7 +16,7 @@ y = startPosition[1]
 def get_message():
     global x, y
 
-    position = pt.locateOnScreen("images/smile_paperclip.png", confidence=.60) 
+    position = pt.locateOnScreen("../images/smile_paperclip.png", confidence=.60) 
     x = position[0]
     y = position[1]
 
@@ -28,8 +27,6 @@ def get_message():
     pt.moveRel(20,-195)
     pt.click()
     whatsappMessage = pyperclip.paste()
-    #pt.click()
-    #print("Message received:", whatsappMessage)
 
     return whatsappMessage
 
@@ -37,7 +34,7 @@ def get_message():
 def post_response(message):
     global x,y
 
-    position = pt.locateOnScreen("images/smile_paperclip.png", confidence=.60) 
+    position = pt.locateOnScreen("../images/smile_paperclip.png", confidence=.60) 
     x = position[0]
     y = position[1]
 
@@ -47,18 +44,14 @@ def post_response(message):
     pt.typewrite("\n", interval=.01) # enter to send message.
 
 def process_response(message):
-    #randomNumber = random.randrange(3)
     return "Testando chatbot!"
 
 # Checks for new messages:
 def checks_for_new_messages():
-    #global x,y
-    #pt.moveTo(x+90, y-35)
-
     while True:
         #Continuously check for green dot and new messages
         try:
-            position = pt.locateOnScreen("images/green_circle.png", confidence=.8)
+            position = pt.locateOnScreen("../images/green_circle.png", confidence=.8)
             if position is not None:
                 pt.moveTo(position)
                 pt.moveRel(-100,0)
@@ -69,12 +62,12 @@ def checks_for_new_messages():
 
         # if color to which the mouse points is white:
         if pt.pixelMatchesColor(int(x+90), int(y-35), (255,255,255), tolerance=10):
-            #print("is_white")
             processed_response = process_response(get_message())
             post_response(processed_response)
         else:
             print("No new messages yet...")
         sleep(5)
+
 
 checks_for_new_messages()
 
