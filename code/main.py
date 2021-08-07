@@ -6,7 +6,7 @@ import random
 sleep(3)
 
 # locate smiley face on screen:
-startPosition = pt.locateOnScreen("smile_paperclip.png", confidence=.60) 
+startPosition = pt.locateOnScreen("images/smile_paperclip.png", confidence=.60) 
 # obs.: using confidence because, if we don't, a slight variation in the image will cause failure
 # in our localization.
 
@@ -17,7 +17,7 @@ y = startPosition[1]
 def get_message():
     global x, y
 
-    position = pt.locateOnScreen("smile_paperclip.png", confidence=.60) 
+    position = pt.locateOnScreen("images/smile_paperclip.png", confidence=.60) 
     x = position[0]
     y = position[1]
 
@@ -37,7 +37,7 @@ def get_message():
 def post_response(message):
     global x,y
 
-    position = pt.locateOnScreen("smile_paperclip.png", confidence=.60) 
+    position = pt.locateOnScreen("images/smile_paperclip.png", confidence=.60) 
     x = position[0]
     y = position[1]
 
@@ -58,7 +58,7 @@ def checks_for_new_messages():
     while True:
         #Continuously check for green dot and new messages
         try:
-            position = pt.locateOnScreen("green_circle.png", confidence=.8)
+            position = pt.locateOnScreen("images/green_circle.png", confidence=.8)
             if position is not None:
                 pt.moveTo(position)
                 pt.moveRel(-100,0)
